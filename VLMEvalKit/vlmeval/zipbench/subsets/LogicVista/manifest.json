@@ -1,0 +1,26 @@
+{
+  "dataset": "LogicVista",
+  "dataset_size": 447,
+  "tsv_md5": "41c5d33adf33765c399e0e6ae588c061",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.logicvista.ZipLogicVistaEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy (the Overall row), the LogicVista official metric; per-skill cells are renormalised within each group, diagnostics only",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 224,
+      "ratio": 0.4989,
+      "anchor_mae": 0.0131,
+      "weight_sum": 1.0000000000000009
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 112,
+      "ratio": 0.7494,
+      "anchor_mae": 0.0206,
+      "weight_sum": 1.0
+    }
+  }
+}

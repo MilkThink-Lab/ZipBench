@@ -1,0 +1,26 @@
+{
+  "dataset": "MMMU_DEV_VAL",
+  "dataset_size": 1050,
+  "tsv_md5": "585e8ad75e73f75dcad265dfd0417d64",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.mmmu.ZipMMMUEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy over the combined dev+validation pool (1050 items); the official validation-only number is reported in secondary as a diagnostic",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 460,
+      "ratio": 0.5619,
+      "anchor_mae": 0.0084,
+      "weight_sum": 0.9999999999999947
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 255,
+      "ratio": 0.7571,
+      "anchor_mae": 0.014,
+      "weight_sum": 0.9999999999999978
+    }
+  }
+}

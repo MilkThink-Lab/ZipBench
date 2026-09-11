@@ -1,0 +1,34 @@
+{
+  "dataset_key": "commonsense_qa",
+  "dataset_size": 1221,
+  "dataset_fingerprint": "e1178440e18674a3576c9172183da187bcca86776c1ca8630b7083f22e6d6395",
+  "selection_unit": "row",
+  "breakdown_fields": [],
+  "dataset": {
+    "type": "zipbench.dataset.ZipSubsetDataset",
+    "loader_kwargs": {
+      "base_loader": "opencompass.datasets.commonsenseqaDataset_Local",
+      "test_split": "validation"
+    }
+  },
+  "evaluator": {
+    "type": "zipbench.evaluator.WeightedAccuracyEvaluator",
+    "merge_base_kwargs": false,
+    "inject_subset_spec": false
+  },
+  "weighting": "weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so that sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 611,
+      "ratio": 0.4995,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 258,
+      "ratio": 0.7883,
+      "weight_sum": 1.0
+    }
+  }
+}

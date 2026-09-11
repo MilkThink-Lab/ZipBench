@@ -1,0 +1,30 @@
+{
+  "dataset": "swe_bench_pro",
+  "display_name": "SWE-Bench Pro (public set)",
+  "n_total_questions": 731,
+  "id_kind": "instance_id, e.g. 'instance_<org>__<repo>-<commit-sha>[-v<sha|nan>]'",
+  "official_metric": "resolved rate",
+  "metric_note": "s_i = 1 if eval_results.json marks the instance true (all FAIL_TO_PASS and PASS_TO_PASS tests passed), else 0.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "swe_bench_pro_eval.py (scaleapi/SWE-bench_Pro-os @ ca10a60)",
+    "dataset": "ScaleAI/SWE-bench_Pro public split (731 instances)",
+    "task_filter_flag": "none — the harness evaluates exactly the instances in the --patch_path predictions JSON; restrict it with 'tasks swe_bench_pro --format ids'"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 366,
+      "ratio": 0.4993,
+      "anchor_mae": 0.0032,
+      "weight_sum": 1.0000000000000027
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 160,
+      "ratio": 0.7811,
+      "anchor_mae": 0.0138,
+      "weight_sum": 1.0000000000000007
+    }
+  }
+}

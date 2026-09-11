@@ -1,0 +1,28 @@
+dataset_key: LiveCodeBench
+dataset_size: 1055
+dataset_fingerprint: 0dbf7b95eca5e412b338b2a7eb891e626e8aebaad2d5f76129a712235f257dd0
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.LCBOfficialCodeGenerationDataset
+    id_field: question_id
+    release_version: release_v6
+evaluator:
+  type: zipbench.adapters.livecodebench.WeightedLCBCodeGenerationEvaluator
+  merge_base_kwargs: true
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 528
+    ratio: 0.4995
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 265
+    ratio: 0.7492
+    weight_sum: 1.0

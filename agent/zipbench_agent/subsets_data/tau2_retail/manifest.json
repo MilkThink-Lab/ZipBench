@@ -1,0 +1,30 @@
+{
+  "dataset": "tau2_retail",
+  "display_name": "τ³-bench retail",
+  "n_total_questions": 114,
+  "id_kind": "numeric task id string '0'..'113'",
+  "official_metric": "pass^1 (average task success)",
+  "metric_note": "s_i = 1 if reward_info.reward == 1.0 (tau2 success criterion), else 0. With several trials per task, s_i is the mean success over trials; simulations that died on infrastructure errors are excluded.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "tau2 >= 1.0.0 (v1.0.0 = the τ³-bench release; tau2 run --domain retail)",
+    "dataset": "retail domain (114 tasks, τ³ task set)",
+    "task_filter_flag": "--task-ids"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 79,
+      "ratio": 0.307,
+      "anchor_mae": 0.005013,
+      "weight_sum": 1.000000000000001
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 72,
+      "ratio": 0.3684,
+      "anchor_mae": 0.015038,
+      "weight_sum": 1.000000000000001
+    }
+  }
+}

@@ -1,0 +1,6 @@
+0	0.337000	0.431333	0.397000	generated/acc_0.397000_k_2_seed_42/MathVista_MINI.json
+1	0.431333	0.525667	0.518000	generated/acc_0.518000_k_4_seed_7/MathVista_MINI.json
+2	0.525667	0.620000	0.599000	generated/acc_0.599000_k_5_seed_1/MathVista_MINI.json
+3	0.620000	0.714333	0.663000	generated/acc_0.663000_k_6_seed_0/MathVista_MINI.json
+4	0.714333	0.808667	0.726000	generated/acc_0.726000_k_5_seed_5/MathVista_MINI.json
+5	0.808667	0.903000	0.815000	generated/acc_0.815000_k_3_seed_40/MathVista_MINI.json

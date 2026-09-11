@@ -1,0 +1,27 @@
+dataset_key: longbench
+dataset_size: 4750
+dataset_fingerprint: 97f3e9dc1e30a14c5bd6424c6adfbe363b798b6176d34628624a4e0f36c5291e
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: zipbench.adapters.longbench.LongbenchAllDataset
+    id_field: _id
+evaluator:
+  type: zipbench.adapters.longbench.WeightedLongbenchEvaluator
+  merge_base_kwargs: false
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 885
+    ratio: 0.8137
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 151
+    ratio: 0.9682
+    weight_sum: 1.0

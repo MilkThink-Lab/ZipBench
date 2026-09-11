@@ -1,0 +1,27 @@
+dataset_key: truthfulqa
+dataset_size: 817
+dataset_fingerprint: e48a1533d3b74998d2908a60c4fd299d71c47a630f4c648eea43f1279577deb0
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.TruthfulQADataset
+    test_split: validation
+evaluator:
+  type: zipbench.adapters.truthfulqa.WeightedTruthfulQAEvaluator
+  merge_base_kwargs: true
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 203
+    ratio: 0.7515
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 144
+    ratio: 0.8237
+    weight_sum: 1.0

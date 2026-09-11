@@ -1,0 +1,33 @@
+{
+  "dataset_key": "arenahard",
+  "dataset_size": 500,
+  "dataset_fingerprint": "bd2d2bb9f997a30b72e5ee33ee7a8e1e2838d00925cb35c58c15d2c921853cc2",
+  "selection_unit": "row",
+  "breakdown_fields": [],
+  "dataset": {
+    "type": "zipbench.dataset.ZipSubsetDataset",
+    "loader_kwargs": {
+      "base_loader": "opencompass.datasets.ArenaHardDataset"
+    }
+  },
+  "evaluator": {
+    "type": "zipbench.adapters.arenahard.arenahard_zip_postprocess",
+    "merge_base_kwargs": false,
+    "inject_subset_spec": true
+  },
+  "weighting": "weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so that sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 250,
+      "ratio": 0.4995,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 123,
+      "ratio": 0.7532,
+      "weight_sum": 1.0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "dataset_key": "humaneval_plus",
+  "dataset_size": 164,
+  "dataset_fingerprint": "bbae451a24d2543e392910a8ba3e6e6deab4fac2523fa21c6b09036bf84594fa",
+  "selection_unit": "row",
+  "breakdown_fields": [],
+  "dataset": {
+    "type": "zipbench.dataset.ZipSubsetDataset",
+    "loader_kwargs": {
+      "base_loader": "opencompass.datasets.HumanevalDataset",
+      "id_field": "task_id"
+    }
+  },
+  "evaluator": {
+    "type": "zipbench.adapters.humaneval_plus.WeightedHumanEvalPlusEvaluator",
+    "merge_base_kwargs": false,
+    "inject_subset_spec": false
+  },
+  "weighting": "weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so that sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 82,
+      "ratio": 0.4995,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 31,
+      "ratio": 0.8117,
+      "weight_sum": 1.0
+    }
+  }
+}

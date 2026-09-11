@@ -1,0 +1,26 @@
+dataset_key: C3
+dataset_size: 1825
+dataset_fingerprint: d5f6c787abc45bb0dd7938887657fef9d0d5b54e93005e73980f5d9cd75117cb
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.C3Dataset_V2
+evaluator:
+  type: zipbench.evaluator.WeightedAccuracyEvaluator
+  merge_base_kwargs: false
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 913
+    ratio: 0.4995
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 59
+    ratio: 0.9678
+    weight_sum: 1.0

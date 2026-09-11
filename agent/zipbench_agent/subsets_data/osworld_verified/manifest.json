@@ -1,0 +1,30 @@
+{
+  "dataset": "osworld_verified",
+  "display_name": "OSWorld-Verified",
+  "n_total_questions": 361,
+  "id_kind": "example uuid, e.g. '94d95f96-9699-4208-98ba-3c3119edf9c2'",
+  "official_metric": "average score",
+  "metric_note": "s_i is the harness's raw reward from result.txt / all_result.json, kept as a float in [0, 1] (no binarisation); with several runs per task, s_i is the mean reward.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "OSWorld run.py + show_result.py (xlang-ai/OSWorld @ 84aee65, OSWorld-Verified)",
+    "dataset": "OSWorld-Verified, evaluation_examples/test_nogdrive.json (361 tasks = 369 minus the 8 Google Drive tasks)",
+    "task_filter_flag": "--test_all_meta_path <json> — generate the file with 'tasks osworld_verified --format meta'"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 205,
+      "ratio": 0.4321,
+      "anchor_mae": null,
+      "weight_sum": 0.9999999999999966
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 98,
+      "ratio": 0.7285,
+      "anchor_mae": null,
+      "weight_sum": 0.9999999999999989
+    }
+  }
+}

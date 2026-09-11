@@ -1,0 +1,27 @@
+dataset_key: arc_challenge
+dataset_size: 1172
+dataset_fingerprint: e27b72037814d2c6c1e5e9eba2706103cd4b35834bb3fac12b9254c5890da01a
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.ARCDatasetAllChoices
+    id_field: id
+evaluator:
+  type: zipbench.evaluator.WeightedAccuracyEvaluator
+  merge_base_kwargs: false
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 321
+    ratio: 0.7261
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 148
+    ratio: 0.8737
+    weight_sum: 1.0

@@ -1,0 +1,30 @@
+{
+  "dataset": "tau2_telecom",
+  "display_name": "τ³-bench telecom",
+  "n_total_questions": 114,
+  "id_kind": "task id from the telecom 'base' split, e.g. '[mms_issue]airplane_mode_on|...[PERSONA:None]'",
+  "official_metric": "pass^1 (average task success)",
+  "metric_note": "s_i = 1 if reward_info.reward == 1.0 (tau2 success criterion), else 0. With several trials per task, s_i is the mean success over trials; simulations that died on infrastructure errors are excluded.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "tau2 >= 1.0.0 (v1.0.0 = the τ³-bench release; tau2 run --domain telecom)",
+    "dataset": "telecom domain, task split 'base' (114 tasks, the CLI default; τ³ task set)",
+    "task_filter_flag": "--task-ids"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 52,
+      "ratio": 0.5439,
+      "anchor_mae": 0.007519,
+      "weight_sum": 1.0000000000000002
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 22,
+      "ratio": 0.807,
+      "anchor_mae": 0.011278,
+      "weight_sum": 1.0000000000000002
+    }
+  }
+}

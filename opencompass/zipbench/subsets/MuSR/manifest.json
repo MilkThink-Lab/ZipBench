@@ -1,0 +1,34 @@
+{
+  "dataset_key": "musr",
+  "dataset_size": 756,
+  "dataset_fingerprint": "371bea5cb1f998cb54730eea5cddfefdcd28d1f8041ec458039a6fa4db12b903",
+  "selection_unit": "row",
+  "breakdown_fields": [],
+  "dataset": {
+    "type": "zipbench.dataset.ZipSubsetDataset",
+    "loader_kwargs": {
+      "base_loader": "zipbench.adapters.musr.MusrAllDataset",
+      "id_field": "_id"
+    }
+  },
+  "evaluator": {
+    "type": "zipbench.adapters.musr.WeightedMusrEvaluator",
+    "merge_base_kwargs": false,
+    "inject_subset_spec": false
+  },
+  "weighting": "weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so that sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 331,
+      "ratio": 0.5622,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 190,
+      "ratio": 0.7487,
+      "weight_sum": 1.0
+    }
+  }
+}

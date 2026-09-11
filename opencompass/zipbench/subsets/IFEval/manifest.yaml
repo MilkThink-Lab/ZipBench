@@ -1,0 +1,26 @@
+dataset_key: ifeval
+dataset_size: 541
+dataset_fingerprint: 45874aab7e499fbb3614697d09eda30682716303bf41ecfc6ea5ea4df153f2a4
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.IFEvalDataset
+evaluator:
+  type: zipbench.adapters.ifeval.WeightedIFEvalEvaluator
+  merge_base_kwargs: true
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 260
+    ratio: 0.5194
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 136
+    ratio: 0.7486
+    weight_sum: 1.0

@@ -1,0 +1,26 @@
+dataset_key: simpleqa
+dataset_size: 4326
+dataset_fingerprint: c9741b07307c8ce40fadad8c21b665e9d86f5c254291d5b146674fc80582a652
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.SimpleQADataset
+evaluator:
+  type: zipbench.adapters.simpleqa.simpleqa_zip_postprocess
+  merge_base_kwargs: false
+  inject_subset_spec: true
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 1085
+    ratio: 0.7492
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 274
+    ratio: 0.9366
+    weight_sum: 1.0

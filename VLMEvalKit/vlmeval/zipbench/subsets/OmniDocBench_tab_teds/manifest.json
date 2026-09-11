@@ -1,0 +1,35 @@
+{
+  "dataset": "OmniDocBench_tab_teds",
+  "dataset_size": 512,
+  "selection_unit": "row",
+  "adapter": "omnidocbench_v15.zip_subset",
+  "official_metric": "table.all.TEDS.all",
+  "metric_note": "OmniDocBench v1.5 official end2end protocol; one inference run and one official evaluation over the union of the six sub-metric subsets, each sub-metric weighted with its own spec; Overall = ((1-text_edit)*100 + table_teds*100 + formula_cdm*100)/3",
+  "weight_normalization": "global",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "tsv_md5": null,
+  "gt_json_md5": "4fbca873108ecbff6d52d2d5a9574687",
+  "layout": "id_list:ids.json",
+  "id_space": "table instance id <page>_[gt_idx], sorted(instance_id) order (n=512)",
+  "gt_source": "LMUData/OmniDocBench_v1_5/OmniDocBench.json (1651 pages)",
+  "score_kind": "teds",
+  "score_direction": "higher_better",
+  "aggregation": "weighted_instance_mean",
+  "enters_overall": true,
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 256,
+      "ratio": 0.5,
+      "anchor_mae": 0.0048,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 128,
+      "ratio": 0.75,
+      "anchor_mae": 0.0085,
+      "weight_sum": 1.0
+    }
+  }
+}

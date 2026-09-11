@@ -1,0 +1,16 @@
+# Core numerics. Keep numpy < 2.0: pkl files serialized with numpy >= 2.0
+# cannot be loaded back in numpy 1.x environments.
+numpy>=1.24,<2.0
+scipy
+scikit-learn
+jsonlines
+tqdm
+
+# IRT training (install the patched py-irt afterwards: pip install -e ./py-irt).
+# Keep torch < 2.0: the bundled py-irt pins torch<2.0.0, so an unpinned torch
+# here would first pull 2.x and then be downgraded during the py-irt install.
+torch<2.0.0
+pyro-ppl
+
+# Multimodal (VLMEvalKit-style) xlsx record parsing in data_prep/
+openpyxl

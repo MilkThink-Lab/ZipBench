@@ -1,0 +1,34 @@
+{
+  "dataset_key": "mbpp_plus",
+  "dataset_size": 399,
+  "dataset_fingerprint": "cba6d9be4124bef4f39a19802eb9595301898b5e74f6db85148f6dde8a169a7f",
+  "selection_unit": "row",
+  "breakdown_fields": [],
+  "dataset": {
+    "type": "zipbench.dataset.ZipSubsetDataset",
+    "loader_kwargs": {
+      "base_loader": "opencompass.datasets.MBPPPlusDataset",
+      "id_field": "task_id"
+    }
+  },
+  "evaluator": {
+    "type": "zipbench.adapters.mbpp_plus.WeightedMbppPlusEvaluator",
+    "merge_base_kwargs": false,
+    "inject_subset_spec": false
+  },
+  "weighting": "weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so that sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 200,
+      "ratio": 0.4995,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 88,
+      "ratio": 0.7805,
+      "weight_sum": 1.0
+    }
+  }
+}

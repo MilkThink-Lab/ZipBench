@@ -1,0 +1,31 @@
+{
+  "dataset": "SimpleVQA",
+  "dataset_size": 2025,
+  "tsv_md5": "e3ce3c11df59a2a15d37489a8b245a87",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.simplevqa.ZipSimpleVQAEvalMixin",
+  "official_metric": "f1",
+  "metric_note": "f1 -- the official SimpleVQA F1 computed from the subset-weighted correct/incorrect/not-attempted proportions; the weighted correct-proportion is also reported as secondary.weighted_accuracy",
+  "weight_normalization": "global",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "headline_keys": [
+    "f1",
+    "acc"
+  ],
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 1014,
+      "ratio": 0.4993,
+      "anchor_mae": 0.0034,
+      "weight_sum": 1.0000000000000075
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 445,
+      "ratio": 0.7802,
+      "anchor_mae": 0.0105,
+      "weight_sum": 1.0000000000000016
+    }
+  }
+}

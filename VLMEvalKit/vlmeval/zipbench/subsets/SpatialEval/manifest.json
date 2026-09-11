@@ -1,0 +1,26 @@
+{
+  "dataset": "SpatialEval",
+  "dataset_size": 4635,
+  "tsv_md5": "4c8eb33142b26be2916fb9164287b72b",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.mcq.ZipMCQEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy; SpatialEval scores by a plain mean over all questions, so the weighted mean is its subset estimator",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 1161,
+      "ratio": 0.7495,
+      "anchor_mae": 0.0041,
+      "weight_sum": 0.999999999999992
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 293,
+      "ratio": 0.9368,
+      "anchor_mae": 0.0082,
+      "weight_sum": 0.9999999999999991
+    }
+  }
+}

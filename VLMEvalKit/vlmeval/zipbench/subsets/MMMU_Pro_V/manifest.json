@@ -1,0 +1,27 @@
+{
+  "dataset": "MMMU_Pro_V",
+  "dataset_size": 1730,
+  "tsv_md5": "d01441a87b3dbe721b5a04652ae38009",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.mmmu.ZipMMMUProGuardMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted version of the official MMMU-Pro micro accuracy (sum(w*if_right)/sum(w)). Evaluation is served by the standalone repo-root script mmmu_pro.py (run/eval --subset small|tiny), which scores with the official MMMU repo evaluate.py; the VLMEvalKit in-tree MMMU_Pro pipeline is guarded off",
+  "weight_normalization": "global",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 866,
+      "ratio": 0.4994,
+      "anchor_mae": 0.0033,
+      "weight_sum": 1.000000000000014
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 434,
+      "ratio": 0.7491,
+      "anchor_mae": 0.0085,
+      "weight_sum": 1.0000000000000062
+    }
+  }
+}

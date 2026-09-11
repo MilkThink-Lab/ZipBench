@@ -1,0 +1,6 @@
+0	0.210000	0.306333	0.282000	generated/acc_0.282000_k_2_seed_43/swe_bench_verified.json
+1	0.306333	0.402667	0.372000	generated/acc_0.372000_k_4_seed_7/swe_bench_verified.json
+2	0.402667	0.499000	0.450000	generated/acc_0.450000_k_5_seed_1/swe_bench_verified.json
+3	0.499000	0.595333	0.526000	generated/acc_0.526000_k_6_seed_0/swe_bench_verified.json
+4	0.595333	0.691667	0.602000	generated/acc_0.602000_k_5_seed_4/swe_bench_verified.json
+5	0.691667	0.788000	0.706000	generated/acc_0.706000_k_3_seed_37/swe_bench_verified.json

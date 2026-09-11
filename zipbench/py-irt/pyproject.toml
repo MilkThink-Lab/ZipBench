@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "py-irt"
+version = "0.4.10"
+readme = "README.md"
+homepage = "https://github.com/nd-ball/py-irt/"
+description = "Bayesian IRT models in Python"
+authors = ["John P. Lalor <john.lalor@nd.edu>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"
+numpy = ">=1.22.0"
+pandas = "^1.1"
+pyro-ppl = "^1.6.0"
+rich = "^9.3.0"
+scipy = "^1.6.3"
+typer = "^0.3.2"
+pydantic = "^1.8.2"
+scikit-learn = "1.2"
+toml = "^0.10.2"
+ordered-set = "^4.1.0"
+torch = "<2.0.0"
+[tool.poetry.dev-dependencies]
+#codecov = "^2.1.11"
+pytest = "^6.2.4"
+pytest-cov = "^2.12.1"
+pylint = "^2.8.3"
+black = "^21.5b2"
+isort = "^5.8.0"
+ipython = "^8.10.0"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+known_first_party = "py_irt"
+profile = "black"
+multi_line_output = 3
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+"py-irt" = 'py_irt.cli:app'

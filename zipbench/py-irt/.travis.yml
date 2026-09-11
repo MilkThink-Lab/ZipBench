@@ -1,0 +1,26 @@
+# disable sudo to speed up build
+sudo: false
+
+language: python
+
+# python versions to build against
+python:
+  - "3.8"
+  - "3.9"
+  - "3.9-dev"  # 3.9 development branch
+  - "3.10" # allow newer python
+  - "3.11"
+  
+# command to install dependencies
+before_install:
+- pip install poetry
+install:
+- poetry install
+  
+# command to run tests
+script:
+  - pytest --cov=./
+
+# push results to codecov
+after_success:
+  - codecov 

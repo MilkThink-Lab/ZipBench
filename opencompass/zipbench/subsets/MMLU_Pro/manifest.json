@@ -1,0 +1,34 @@
+{
+  "dataset_key": "mmlu_pro",
+  "dataset_size": 12032,
+  "dataset_fingerprint": "6bbf43968a74611668e65dccef4ed60e3071bdf85ae2e00e617f35013b4c82fa",
+  "selection_unit": "row",
+  "breakdown_fields": [],
+  "dataset": {
+    "type": "zipbench.dataset.ZipSubsetDataset",
+    "loader_kwargs": {
+      "base_loader": "zipbench.adapters.mmlu_pro.MMLUProAllDataset",
+      "id_field": "question_id"
+    }
+  },
+  "evaluator": {
+    "type": "zipbench.evaluator.WeightedAccuracyEvaluator",
+    "merge_base_kwargs": false,
+    "inject_subset_spec": false
+  },
+  "weighting": "weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so that sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 388,
+      "ratio": 0.9678,
+      "weight_sum": 1.0
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 259,
+      "ratio": 0.9785,
+      "weight_sum": 1.0
+    }
+  }
+}

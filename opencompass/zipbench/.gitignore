@@ -1,0 +1,7 @@
+# Re-include zipbench data files that the repo-root .gitignore's global
+# *.json / *.jsonl rules would otherwise exclude: the subset specs and
+# manifests are required at eval time, the anchor-order tables by
+# convert_anchor_to_spec.py.
+!subsets/*/manifest.json
+!subsets/*/*.jsonl
+!adapters/*_anchor_order.json

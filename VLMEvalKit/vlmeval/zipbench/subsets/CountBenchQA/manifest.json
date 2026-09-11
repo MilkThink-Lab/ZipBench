@@ -1,0 +1,26 @@
+{
+  "dataset": "CountBenchQA",
+  "dataset_size": 487,
+  "tsv_md5": "fc73c8d4ffa665431448753f094d56ff",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.countbenchqa.ZipCountBenchQAEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy (substring-match scoring), the CountBenchQA official metric",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 244,
+      "ratio": 0.499,
+      "anchor_mae": 0.009,
+      "weight_sum": 0.9999999999999969
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 92,
+      "ratio": 0.8111,
+      "anchor_mae": 0.0194,
+      "weight_sum": 0.9999999999999998
+    }
+  }
+}

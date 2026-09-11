@@ -1,0 +1,26 @@
+{
+  "dataset": "MMStar",
+  "dataset_size": 1500,
+  "tsv_md5": "e1ecd2140806c1b1bbf54b43372efb9e",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.mcq.ZipMCQEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy; MMStar scores by a plain mean over all questions, so the weighted mean is its subset estimator",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 376,
+      "ratio": 0.7493,
+      "anchor_mae": 0.0137,
+      "weight_sum": 1.0000000000000004
+    },
+    "small": {
+      "file": "small.jsonl",
+      "n": 540,
+      "ratio": 0.64,
+      "anchor_mae": 0.0104,
+      "weight_sum": 1.0000000000000024
+    }
+  }
+}

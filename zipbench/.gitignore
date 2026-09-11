@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Experiment outputs (note: py-irt/examples ships a .jsonlines fixture, so
+# these patterns are scoped to the pipeline output directories only)
+output/
+compressed/
+evaluation_results.json

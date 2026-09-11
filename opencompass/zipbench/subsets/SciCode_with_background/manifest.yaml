@@ -1,0 +1,25 @@
+dataset_key: SciCode_with_background
+dataset_size: 288
+dataset_fingerprint: a276dd666475dc435f21976df8cdf6176f08e720682c0282cfa61650e74dc3e7
+selection_unit: subproblem
+breakdown_fields: []
+dataset:
+  type: zipbench.adapters.scicode.ZipSciCodeDataset
+  loader_kwargs: {}
+evaluator:
+  type: zipbench.adapters.scicode.WeightedSciCodeEvaluator
+  merge_base_kwargs: true
+  inject_subset_spec: true
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 144
+    ratio: 0.4995
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 72
+    ratio: 0.7493
+    weight_sum: 1.0

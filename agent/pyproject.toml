@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zipbench-agent"
+version = "0.1.0"
+description = "Compressed-subset evaluation for agent benchmarks: export ZipBench task IDs to the official harness and rescore its results"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+zipbench-agent = "zipbench_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["zipbench_agent*"]
+
+[tool.setuptools.package-data]
+zipbench_agent = ["subsets_data/*/*"]

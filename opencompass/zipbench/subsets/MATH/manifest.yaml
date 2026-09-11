@@ -1,0 +1,27 @@
+dataset_key: math
+dataset_size: 1324
+dataset_fingerprint: 1c0a291ff739f3b8dd042735922225c54f913aee97d2da631247a1463caf5bc2
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.MATHDataset
+    id_field: _id
+evaluator:
+  type: zipbench.adapters.math.WeightedMATHEvaluator
+  merge_base_kwargs: false
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 301
+    ratio: 0.7727
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 237
+    ratio: 0.821
+    weight_sum: 1.0

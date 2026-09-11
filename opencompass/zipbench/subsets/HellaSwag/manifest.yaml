@@ -1,0 +1,27 @@
+dataset_key: hellaswag
+dataset_size: 10042
+dataset_fingerprint: 3cd099eff9744db0f2daedf441465c48a5240e22c60b0efcb60ca25017988883
+selection_unit: row
+breakdown_fields: []
+dataset:
+  type: zipbench.dataset.ZipSubsetDataset
+  loader_kwargs:
+    base_loader: opencompass.datasets.HellaswagDataset_V2
+    id_field: _id
+evaluator:
+  type: zipbench.evaluator.WeightedAccuracyEvaluator
+  merge_base_kwargs: false
+  inject_subset_spec: false
+weighting: 'weighted_acc = sum(w_i * correct_i) * 100   # weights are normalised so
+  that sum(w_i) == 1'
+subsets:
+  small:
+    file: small.jsonl
+    n: 951
+    ratio: 0.9053
+    weight_sum: 1.0
+  tiny:
+    file: tiny.jsonl
+    n: 147
+    ratio: 0.9854
+    weight_sum: 1.0

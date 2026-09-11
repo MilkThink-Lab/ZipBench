@@ -1,0 +1,30 @@
+{
+  "dataset": "swe_bench_multilingual",
+  "display_name": "SWE-bench Multilingual",
+  "n_total_questions": 300,
+  "id_kind": "instance_id, e.g. 'apache__druid-13704'",
+  "official_metric": "resolved rate",
+  "metric_note": "s_i = 1 if the instance is resolved (member of resolved_ids in the swebench harness report), else 0.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "swebench >= 4.1.0 (python -m swebench.harness.run_evaluation)",
+    "dataset": "SWE-bench/SWE-bench_Multilingual (test split, 300 instances)",
+    "task_filter_flag": "-i/--instance_ids"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 110,
+      "ratio": 0.6333,
+      "anchor_mae": 0.002857,
+      "weight_sum": 0.9999999999999996
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 78,
+      "ratio": 0.74,
+      "anchor_mae": 0.005714,
+      "weight_sum": 1.0
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "dataset": "OCRBench_v2",
+  "dataset_size": 10000,
+  "tsv_md5": "65d04fe07b4d4ee33e73fc8e7d4d46b0",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.ocrbench_v2.ZipOCRBenchV2EvalMixin",
+  "official_metric": "macro_task_average",
+  "metric_note": "en/cn each = weighted mean within each task group, then macro-average (8 en / 5 cn groups), the OCRBench_v2 official protocol; the headline uses the raw continuous scores",
+  "weight_normalization": "per_group",
+  "weighting": "per group: sum(w_i * s_i) / sum(w_i) within each task group, macro-averaged; weights sum to 1 within each group",
+  "headline_keys": [
+    "English Overall Score",
+    "Chinese Overall Score"
+  ],
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 5005,
+      "ratio": 0.4995,
+      "anchor_mae": {
+        "en": 0.0032,
+        "cn": 0.0032
+      },
+      "weight_sum": 12.999999999999712,
+      "n_by_lang": {
+        "en": 3704,
+        "cn": 1301
+      }
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 2508,
+      "ratio": 0.7492,
+      "anchor_mae": {
+        "en": 0.008,
+        "cn": 0.0092
+      },
+      "weight_sum": 12.999999999999897,
+      "n_by_lang": {
+        "en": 1856,
+        "cn": 652
+      }
+    }
+  }
+}

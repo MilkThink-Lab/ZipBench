@@ -1,0 +1,6 @@
+0	0.373460	0.462243	0.442654	generated/acc_0.442654_k_2_seed_42/LiveCodeBench.json
+1	0.462243	0.551027	0.525118	generated/acc_0.525118_k_4_seed_7/LiveCodeBench.json
+2	0.551027	0.639810	0.633175	generated/acc_0.633175_k_6_seed_0/LiveCodeBench.json
+3	0.639810	0.728594	0.689100	generated/acc_0.689100_k_5_seed_4/LiveCodeBench.json
+4	0.728594	0.817378	0.757346	generated/acc_0.757346_k_4_seed_16/LiveCodeBench.json
+5	0.817378	0.906161	0.860664	generated/acc_0.860664_k_2_seed_56/LiveCodeBench.json

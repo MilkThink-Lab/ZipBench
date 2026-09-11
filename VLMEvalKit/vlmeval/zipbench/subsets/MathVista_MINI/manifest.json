@@ -1,0 +1,26 @@
+{
+  "dataset": "MathVista_MINI",
+  "dataset_size": 1000,
+  "tsv_md5": "f199b98e178e5a2a20e7048f5dcb0464",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.mathvista.ZipMathVistaEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy (the Overall row), the MathVista official metric; task/skill cells are renormalised within each group, diagnostics only",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 376,
+      "ratio": 0.624,
+      "anchor_mae": 0.0086,
+      "weight_sum": 1.0000000000000007
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 251,
+      "ratio": 0.749,
+      "anchor_mae": 0.0135,
+      "weight_sum": 1.0000000000000007
+    }
+  }
+}

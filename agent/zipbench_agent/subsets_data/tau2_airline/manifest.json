@@ -1,0 +1,30 @@
+{
+  "dataset": "tau2_airline",
+  "display_name": "τ³-bench airline",
+  "n_total_questions": 50,
+  "id_kind": "numeric task id string '0'..'49'",
+  "official_metric": "pass^1 (average task success)",
+  "metric_note": "s_i = 1 if reward_info.reward == 1.0 (tau2 success criterion), else 0. With several trials per task, s_i is the mean success over trials; simulations that died on infrastructure errors are excluded.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "tau2 >= 1.0.0 (v1.0.0 = the τ³-bench release; tau2 run --domain airline)",
+    "dataset": "airline domain (50 tasks, τ³ task set)",
+    "task_filter_flag": "--task-ids"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 23,
+      "ratio": 0.54,
+      "anchor_mae": 0.014286,
+      "weight_sum": 1.0000000000000002
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 14,
+      "ratio": 0.72,
+      "anchor_mae": 0.02,
+      "weight_sum": 1.0
+    }
+  }
+}

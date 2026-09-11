@@ -1,0 +1,26 @@
+{
+  "dataset": "RealWorldQA",
+  "dataset_size": 765,
+  "tsv_md5": "4de008f55dc4fd008ca9e15321dc44b7",
+  "selection_unit": "row",
+  "adapter": "vlmeval.zipbench.adapters.mcq.ZipMCQEvalMixin",
+  "official_metric": "micro_accuracy",
+  "metric_note": "micro_accuracy -- subset-weighted per-question accuracy; RealWorldQA scores by a plain mean over all questions, so the weighted mean is its subset estimator",
+  "weighting": "score = sum(w_i * s_i) / sum(w_i); weights normalised so sum(w_i) == 1",
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 431,
+      "ratio": 0.4366,
+      "anchor_mae": 0.0107,
+      "weight_sum": 0.9999999999999971
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 96,
+      "ratio": 0.8745,
+      "anchor_mae": 0.0184,
+      "weight_sum": 0.9999999999999989
+    }
+  }
+}

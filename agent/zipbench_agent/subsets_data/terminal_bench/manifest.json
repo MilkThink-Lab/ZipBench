@@ -1,0 +1,30 @@
+{
+  "dataset": "terminal_bench",
+  "display_name": "Terminal-Bench 2.0",
+  "n_total_questions": 89,
+  "id_kind": "task name in the terminal-bench@2.0 dataset, e.g. 'gpt2-codegolf'",
+  "official_metric": "task pass rate",
+  "metric_note": "s_i = 1 if the trial reward >= 0.5, else 0 (ZipBench binarisation convention; harbor rewards for terminal-bench@2.0 are effectively 0/1 already). With several attempts per task, s_i is the mean of the binarised attempt rewards.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "harbor >= 0.4.0 (terminal-bench 2.x harness)",
+    "dataset": "terminal-bench@2.0 (89 tasks)",
+    "task_filter_flag": "-i/--include-task-name (repeatable)"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 72,
+      "ratio": 0.191,
+      "anchor_mae": 0.009894,
+      "weight_sum": 1.0000000000000013
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 50,
+      "ratio": 0.4382,
+      "anchor_mae": 0.021633,
+      "weight_sum": 1.0000000000000007
+    }
+  }
+}

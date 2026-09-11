@@ -1,0 +1,30 @@
+{
+  "dataset": "toolathlon",
+  "display_name": "Toolathlon",
+  "n_total_questions": 108,
+  "id_kind": "task name in tasks/finalpool, e.g. 'course-schedule'",
+  "official_metric": "task pass rate",
+  "metric_note": "s_i = 1 if the task's eval_res.json has pass == true, else 0 (0/1, no partial credit); with several runs per task, s_i is the mean over runs.",
+  "weighting": "score = sum(w_i * s_i); weights normalised so sum(w_i) == 1",
+  "upstream": {
+    "harness": "run_parallel.py (hkust-nlp/Toolathlon)",
+    "dataset": "original 108-task release (pre-Verified); correctness records from HF Toolathlon-Trajectories",
+    "task_filter_flag": "--task_list <txt> — one task name per line, i.e. the 'tasks toolathlon --format ids' output"
+  },
+  "subsets": {
+    "small": {
+      "file": "small.jsonl",
+      "n": 76,
+      "ratio": 0.2963,
+      "anchor_mae": null,
+      "weight_sum": 1.000000000000001
+    },
+    "tiny": {
+      "file": "tiny.jsonl",
+      "n": 58,
+      "ratio": 0.463,
+      "anchor_mae": null,
+      "weight_sum": 1.0000000000000004
+    }
+  }
+}
