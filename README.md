@@ -3,7 +3,7 @@
   <h3>A Compact Benchmark Zoo for Fast and Reliable Model Evaluation</h3>
   <p>100+ ready-to-use compact versions of text, multimodal, and agent benchmarks.</p>
   <p>
-    <img src="https://img.shields.io/badge/EMNLP-2026%20Main-6f42c1" alt="EMNLP 2026 Main">
+    <a href="https://arxiv.org/abs/2609.12475"><img src="https://img.shields.io/badge/Paper-EMNLP%202026-6f42c1" alt="Paper: EMNLP 2026"></a>
     <img src="https://img.shields.io/badge/ZipBench%20Zoo-100%2B%20Compact%20Benchmarks-b8860b" alt="100+ compact benchmarks">
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue" alt="Apache 2.0 License"></a>
   </p>
@@ -143,7 +143,15 @@ The original upstream documentation is retained as [`opencompass/README_OpenComp
 ## 📚 Citation
 
 ```bibtex
-xxxxx
+@misc{huang2026zipbenchlowcostframeworkcompressing,
+      title={Zipbench: Low-Cost Framework for Compressing Comprehensive Benchmarks of Large Language Models}, 
+      author={Zhongzhan Huang and Junxin Li and Guoming Ling and Yupei Lin and Shanshan Zhong and Hefeng Wu},
+      year={2026},
+      eprint={2609.12475},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2609.12475}, 
+}
 ```
 
 ## 🙏 Acknowledgements
