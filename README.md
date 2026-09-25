@@ -24,7 +24,7 @@ This repository is the official codebase for our EMNLP paper "ZipBench: Low-Cost
 
 ## 🎉 News
 
-2026-08 - Our paper "ZipBench" has been accepted for an **Oral presentation** at EMNLP'26! [[Paper]](https://arxiv.org/abs/2609.12475) 👈🎉Please read it！
+2026-08 - Our "ZipBench" has been accepted for an **Oral presentation** at EMNLP'26! [[Paper]](https://arxiv.org/abs/2609.12475) 👈🎉Please read it！
 
 
 ## ✨ What You Can Do
