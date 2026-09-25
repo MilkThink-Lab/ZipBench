@@ -3,7 +3,7 @@
   <h3>A Compact Benchmark Zoo for Fast and Reliable Model Evaluation</h3>
   <p>100+ ready-to-use compact versions of text, multimodal, and agent benchmarks.</p>
   <p>
-    <a href="https://arxiv.org/abs/2609.12475"><img src="https://img.shields.io/badge/Paper-EMNLP%202026-6f42c1" alt="Paper: EMNLP 2026"></a>
+    <a href="https://arxiv.org/abs/2609.12475"><img src="https://img.shields.io/badge/Oral-EMNLP%202026-6f42c1" alt="Oral: EMNLP 2026"></a>
     <img src="https://img.shields.io/badge/ZipBench%20Zoo-100%2B%20Compact%20Benchmarks-b8860b" alt="100+ compact benchmarks">
     <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue" alt="Apache 2.0 License"></a>
   </p>
@@ -24,7 +24,7 @@ This repository is the official codebase for our EMNLP paper "ZipBench: Low-Cost
 
 ## 🎉 News
 
-2026-08 - Our paper "ZipBench" has been accepted to the EMNLP'26 Main Conference! [[Paper]](https://arxiv.org/abs/2609.12475) 👈🎉Please read it！
+2026-08 - Our paper "ZipBench" has been accepted for an **Oral presentation** at EMNLP'26! [[Paper]](https://arxiv.org/abs/2609.12475) 👈🎉Please read it！
 
 
 ## ✨ What You Can Do
